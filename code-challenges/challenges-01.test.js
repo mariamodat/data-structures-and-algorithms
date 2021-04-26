@@ -47,11 +47,12 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 const allUpperCase = (arr) => {
   // Solution code here...
   let newAR= [];
-    // arr.map(string=>{ return string.toUpperCase();
-     newAR =arr.map(function(x) { return x.toUpperCase();
-
-  });
-   
+    arr.forEach(Element => {
+ let x =Element.toUpperCase();
+newAR.push(x);
+    });
+  
+   return newAR;
   
 
   }
@@ -110,11 +111,11 @@ const addValues = (arr, value) => {
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
   arr.push(num);
-  for (let i=0 ; i < times ; i < times)
+  for (let i=0 ; i < times ; i++)
   {
     callback(arr,num);
   }
-
+return arr ;
 };
 
 /* ------------------------------------------------------------------------------------------------
