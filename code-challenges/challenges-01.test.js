@@ -11,11 +11,11 @@ const addOne = (arr) => {
   // Solution code here...
   let newArr=[];
 arr.forEach(num => {
-newArr.push(num-1) ;
+newArr.push(num+1) ;});
 return newArr;
 
   
-});
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,10 +30,10 @@ const addExclamation = (arr) => {
   // Solution code here...
   let newArr = [];
   arr.forEach(string => {
-    newArr.push(`${string} !`);
+    newArr.push(`${string}!`);});
     return newArr;
     
-  });
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,11 +46,17 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  arr.forEach(string => {
-    arr.map(f=>{ return f.toUpperCase(); });
+  let newAR= [];
+    // arr.map(string=>{ return string.toUpperCase();
+     newAR =arr.map(function(x) { return x.toUpperCase();
+
+  });
+   
+  
+
   }
-    )
-};
+    
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -64,7 +70,8 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  word.toUpperCase;
+  let newWord =word.toUpperCase();
+  return (newWord+'!');
   
 };
 
@@ -72,10 +79,11 @@ const speaker = (words, callback) => {
   // Solution code here...
   let newArr = [];
   words.forEach(word => {
-    greeting(word);
-    newArr.push(word);
+    let newWord=callback(word);
+
+    newArr.push(newWord);})
     return newArr;
-  })
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,14 +104,17 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-  arr.push (value);
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
   arr.push(num);
-  times++;
-  addValues(arr,num);
+  for (let i=0 ; i < times ; i < times)
+  {
+    callback(arr,num);
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
