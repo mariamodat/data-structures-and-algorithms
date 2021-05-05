@@ -199,6 +199,18 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+//   let charCount = arr.reduce((p,w) => w.split("").reduce((t,c) => (t[c] ? t[c]++: t[c] = 1,t),p),{});
+// return charCount;
+// output = {};
+// arr.forEach(function(word){ 
+// for(i=0; i < word.split('').length; i++){
+// if(output[word[i]])
+//   output[word[i]] += 1;
+// else{
+//   output[word[i]] = 1;
+// }  
+// } 
+// });
 };
 
 /* ------------------------------------------------------------------------------------------------
