@@ -48,14 +48,18 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
-  for (let property in obj)
-  {
-    if (property=== (value)|| obj[property]===value)
-    { return true}
-    else {
-      return false;
-    }
-  }
+  // for (let property in obj)
+  // {
+  //   if (property=== (value)|| obj[property]===value)
+  //   { return true}
+  //   else {
+  //     return false;
+  //   }
+  // }
+
+  return Object.values(obj).includes(value);
+
+  // })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,6 +89,9 @@ const updateNumbers = (obj) => {
 newArr.push(`${property}: ${obj[property]}`)
   }
   return newArr;
+// Object.keys(obj).map(person=> {
+//   return (`${person}: ${obj[person]}`)
+// })
 };
 
 
@@ -161,7 +168,14 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+// arr.map(one=>{
+//    return Object.values(one).includes(character);
 
+// })
+
+let check=true;
+  Object.values(arr).map(element=>{ element.name===character?Object.keys(element).includes('children')?check=true:check=false:null;});
+  return check;
 
 };
 
@@ -283,7 +297,7 @@ describe('Testing challenge 5', () => {
 });
 
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
