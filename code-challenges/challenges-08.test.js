@@ -120,8 +120,14 @@ const isCapitalized = (str) => {
   // const upperCaseWords = str.match(validator);
   // return upperCaseWords;
 
-  let reg = /=*([A-Z]\w*\W*)+=*/g;
-  return str.match(reg);
+  let capChar = /\b[A-Z](\w)*/g;
+  let charArr = str.match(capChar);
+  if (charArr) {
+    return charArr;
+  } else {
+    let empty = [];
+    return empty;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -260,7 +266,7 @@ describe('Testing challenge 4', () => {
   });
 })
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
