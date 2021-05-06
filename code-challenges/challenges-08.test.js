@@ -262,7 +262,7 @@ describe('Testing challenge 4', () => {
     expect(containsWorld('Hello World')).toBe(false);
   });
   test('It should return false if the input does not contain the word school', () => {
-    expect(containsWorld('hello everyone')).toBe(false);
+    expect(containsWorld(' hello everyone')).toBe(false);
   });
 })
 
